@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunil Bani | Junior PenTester & Security Researcher</title>
+    <meta name="description" content="Portfolio of Sunil Bani - Junior PenTester & Security Researcher.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Particles & Chart JS CDNs -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Pre-loader -->
+    <div id="preloader">
+        <div class="loader-terminal" id="loaderTerminal"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <div id="particles-js" class="particles-bg"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo glitch" data-text="Sunil Bani">Sunil Bani</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certificates</a></li>
+                <li class="nav-toggles">
+                    <button id="audioToggle" class="icon-btn" title="Toggle Audio">
+                        <i class="fas fa-volume-mute"></i>
+                    </button>
+                    <div class="theme-switch-wrapper" title="Toggle Privilege">
+                        <span class="mode-label">Guest</span>
+                        <label class="theme-switch" for="rootModeToggle">
+                            <input type="checkbox" id="rootModeToggle" />
+                            <div class="slider round"></div>
+                        </label>
+                        <span class="mode-label">Root</span>
+                    </div>
+                </li>
+                <li><a href="#contact" class="btn-outline">Connect</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="btn red"></span>
+                        <span class="btn yellow"></span>
+                        <span class="btn green"></span>
+                        <span class="title">guest@kali:~</span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <!-- JS injected typing effect -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title"><span class="prompt">></span> ./about.sh</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="decrypt-text"
+                            data-original="Cyber Security Enthusiast and MCA graduate, actively learning and applying skills in penetration testing, vulnerability management, and network security through platforms like TryHackMe and Hack The Box.">
+                            Cyber Security Enthusiast and MCA graduate, actively learning and applying skills in
+                            penetration testing, vulnerability management, and network security through platforms like
+                            TryHackMe and Hack The Box.</p>
+                        <p class="decrypt-text"
+                            data-original="Currently preparing for the Certified Ethical Hacker (CEH) certification, focusing on ethical hacking and real-world application of cyber defense techniques. Passionate about securing digital systems and contributing to organizations' cybersecurity strategies. Continuously improving through hands-on labs and practical experience.">
+                            Currently preparing for the Certified Ethical Hacker (CEH) certification, focusing on
+                            ethical hacking and real-world application of cyber defense techniques. Passionate about
+                            securing digital systems and contributing to organizations' cybersecurity strategies.
+                            Continuously improving through hands-on labs and practical experience.</p>
+
+                        <div class="download-container">
+                            <button id="downloadResumeBtn" class="btn-outline secure-download-btn">
+                                <i class="fas fa-lock"></i> <span id="downloadBtnText">Securely Download Resume</span>
+                            </button>
+                            <div id="downloadProgress" class="progress-bar-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-card">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="edu-item">
+                            <h4>MCA (Master of Computer Applications)</h4>
+                            <p>KLE College of Engineering and Technology, Chikodi</p>
+                            <span class="date">2023 - 2025 | CGPA: 8.37</span>
+                        </div>
+                        <div class="edu-item">
+                            <h4>BCA (Bachelor of Computer Application)</h4>
+                            <p>KLES BCA P C Jabin Science College, Hubli</p>
+                            <span class="date">2020 - 2023 | CGPA: 8.2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title"><span class="prompt">></span> ./skills.sh</h2>
+                <div class="skills-layout">
+                    <div class="visuals-col">
+                        <div class="chart-container">
+                            <canvas id="skillsChart"></canvas>
+                        </div>
+                        <div class="network-map-container" title="Live Network Traffic Sim">
+                            <canvas id="networkMapCanvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-bug"></i> Vulnerability Management</h3>
+                            <div class="tags">
+                                <span>Nessus</span>
+                                <span>OpenVAS</span>
+                                <span>Burp Suite</span>
+                                <span>Hydra</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3><i class="fas fa-network-wired"></i> Network Security</h3>
+                            <div class="tags">
+                                <span>Nmap</span>
+                                <span>Wireshark</span>
+                                <span>TCP/IP</span>
+                                <span>DNS</span>
+                                <span>Firewall & Protocol Analysis</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3><i class="fas fa-bomb"></i> Exploitation Frameworks</h3>
+                            <div class="tags">
+                                <span>Metasploit</span>
+                                <span>SQLmap (Injection testing)</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h3><i class="fas fa-server"></i> SecOps & OS</h3>
+                            <div class="tags">
+                                <span>Linux (Kali)</span>
+                                <span>Windows Server Admin</span>
+                                <span>PCI-DSS</span>
+                                <span>HIPAA</span>
+                                <span>NIST Framework</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title"><span class="prompt">></span> ls -la ./projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="card-header">
+                            <i class="fas fa-folder-open"></i>
+                            <h3>Virtualized Pentesting Home Lab Environment</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Designed and deployed a segregated virtual network using Hyper-V/VirtualBox to
+                                    simulate a small corporate environment safely.</li>
+                                <li>Configured attack machinery using Kali Linux loaded with standard CEH tools (Nmap,
+                                    Metasploit, Burp Suite).</li>
+                                <li>Deployed target systems, including Metasploitable for Linux vulnerability testing
+                                    and a Windows 10 client for client-side attack simulations.</li>
+                                <li>Implemented networking controls (Host-only adapters/NAT networks) to ensure
+                                    malicious traffic remained contained within the virtual environment.</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <span class="tech-tag">Hyper-V/VirtualBox</span>
+                            <span class="tech-tag">Kali Linux</span>
+                            <span class="tech-tag">Metasploit</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Enterprise Vulnerability Scanning & Prioritization Cycle</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Deployed Nessus Essentials and OpenVAS vulnerability scanner within a virtualized
+                                    lab network containing varied assets (Windows 10, Ubuntu Web Server,
+                                    Metasploitable).</li>
+                                <li>Configured and executed credentialed scans to ensure deeper visibility into missing
+                                    patches and local configuration flaws, rather than just surface-level network
+                                    issues.</li>
+                                <li>Analyzed the resulting vulnerability reports, filtering out likely false positives
+                                    based on asset context.</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <span class="tech-tag">Nessus</span>
+                            <span class="tech-tag">OpenVAS</span>
+                            <span class="tech-tag">VulnAnalysis</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-header">
+                            <i class="fas fa-microchip"></i>
+                            <h3>VulnSecure</h3>
+                        </div>
+                        <div class="card-body">
+                            <p style="color:var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">Category:
+                                Vulnerability Management & Tool Development</p>
+                            <ul>
+                                <li><strong>Overview:</strong> Custom Vulnerability Intelligence & Prioritization Engine
+                                    automating ingestion and analysis of security data.</li>
+                                <li>Integrates real-world exploit telemetry from the NVD and CISA's KEV to shift focus
+                                    from static scoring to dynamic risk assessment.</li>
+                                <li>Demonstrates the ability to build scalable security tools that bridge the gap
+                                    between "finding" a bug and "understanding" its threat level.</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <span class="tech-tag">NVD/CISA KEV</span>
+                            <span class="tech-tag">API Dev</span>
+                            <span class="tech-tag">Threat Intel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title"><span class="prompt">></span> cat certs.txt</h2>
+                <div class="certs-list">
+                    <div class="cert-item in-progress">
+                        <div class="cert-icon"><i class="fas fa-user-secret"></i></div>
+                        <div class="cert-details">
+                            <h3>Certified Ethical Hacker (CEH)</h3>
+                            <p>Candidate (In-Progress)</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="cert-details">
+                            <h3>Ethical Hacker</h3>
+                            <p>Cisco Networking Academy</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-user-shield"></i></div>
+                        <div class="cert-details">
+                            <h3>Ethical Hacking Essentials</h3>
+                            <p>EC-Council</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                        <div class="cert-details">
+                            <h3>Network Essentials</h3>
+                            <p>Cisco Networking Academy</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <div class="cert-details">
+                            <h3>Information Security Auditor</h3>
+                            <p>Certification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title"><span class="prompt">></span> ./contact_me.sh</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <a href="mailto:banisunil75@gmail.com" class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <span>banisunil75@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sunil-bani-444883200/" target="_blank"
+                            class="contact-card">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Interactive Terminal Section -->
+        <section id="interactive-terminal" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title"><span class="prompt">></span> ./interactive_shell.sh</h2>
+                <div class="terminal-window interactive-shell">
+                    <div class="terminal-header">
+                        <span class="btn red"></span>
+                        <span class="btn yellow"></span>
+                        <span class="btn green"></span>
+                        <span class="title">guest@kali:~</span>
+                    </div>
+                    <div class="terminal-body" id="shellBody" style="min-height: 250px;">
+                        <div class="shell-output">Type 'help' to see available commands. Connection secure.</div>
+                        <div class="shell-input-line">
+                            <span class="prompt">guest@sys:~$</span>
+                            <input type="text" id="shellInput" autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>> root@terminal:~$ exit</p>
+            <p class="copyright">© 2026 Sunil Bani. Built by Antigravity.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
